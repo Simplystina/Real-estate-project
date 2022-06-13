@@ -28,7 +28,7 @@ export const filterData = [
         { name: '85,000', value: '85000' },
       ],
       placeholder: 'Min Price(AED)',
-      queryName: 'minPrice',
+      queryName: 'priceMin',
     },
     {
       items: [
@@ -50,7 +50,7 @@ export const filterData = [
         { name: '1000,000', value: '1000000' },
       ],
       placeholder: 'Max Price(AED)',
-      queryName: 'maxPrice',
+      queryName: 'priceMax',
     },
     {
       items: [
@@ -128,6 +128,9 @@ export const filterData = [
         { name: 'Residential Plot', value: '14' },
         { name: 'Residential Floor', value: '12' },
         { name: 'Residential Building', value: '17' },
+        {name: 'Showroom', value:24},
+        {name: 'Factory', value:8},
+        {name: 'Warehouse', value:7}
       ],
       placeholder: 'Property Type',
       queryName: 'categoryExternalID',

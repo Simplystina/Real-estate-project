@@ -2,11 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Property  from '../components/property'
 import { Flex, Box, Text, Button} from '@chakra-ui/react'
+import Loader from '../components/Loader'
 
 
 import {baseUrl, fetchApi} from '../utils/fetchApi'
+import { useState } from 'react'
 
-const Banner = ({img, purpose, title, options, button, desc}) =>(
+const Banner = ({img, purpose, title, button, desc}) =>(
   
   <>
     <Flex flexWrap='wrap' justifyContent ='center'  alignItems="center" m="10">
@@ -14,7 +16,7 @@ const Banner = ({img, purpose, title, options, button, desc}) =>(
         <Image src={img} width={500} height={300}/>
       </Box>
       <Box p={5}>
-        <Text font>{purpose}</Text>
+        <Text  fontSize='16px'>{purpose}</Text>
         <Text marginTop={2} fontSize="22px" fontWeight="bold" maxW="200px">{title}</Text>
         <Text maxW="320px" marginTop={2}>{desc}</Text>
         <Button marginTop={5}>{button}</Button>
@@ -27,6 +29,12 @@ const Banner = ({img, purpose, title, options, button, desc}) =>(
 
 function Home({propertiesForRent, propertiesForSale}) {
    
+   
+   if(!propertiesForRent){
+    return (
+      <Loader/>
+    )
+   }
   return (
     <>
     <Banner
@@ -67,11 +75,13 @@ function Home({propertiesForRent, propertiesForSale}) {
 export async function getStaticProps(){
   const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
   const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
-
+  
 return {
+
   props:{
     propertiesForSale: propertyForSale?.hits,
     propertiesForRent: propertyForRent?.hits,
+    
   }
 }
 }

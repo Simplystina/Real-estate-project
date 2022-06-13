@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Flex, Select, Box, Text, Input, Spinner, Icon, Button } from '@chakra-ui/react';
+import { Flex, Select, Box } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { MdCancel } from 'react-icons/md';
-import Image from 'next/image';
 
-import { filterData, getFilterValues } from '../utils/filterdata';
-import { baseUrl, fetchApi } from '../utils/fetchApi';
-import noresult from '../assets/images/noresult.svg';
+
+import { filterData } from '../utils/filterdata';
+
 
 const SearchItems = ()=>{
     const router = useRouter()
@@ -19,20 +17,20 @@ const SearchItems = ()=>{
         
        
     }
-    //console.log("Parameters outside useEffect",parameters)
+    
     useEffect(()=>{
         let queryupdate = router.query
-        console.log(queryupdate)
         queryupdate = {...queryupdate,...parameters}
         router.push({pathname:'/search', query:queryupdate})
+        console.log(queryupdate)
     },[parameters])
     return (
         <>
-        <Flex justifyContent='center' flexWrap='wrap'>
+        <Flex justifyContent='center' flexWrap='wrap' w='100%'>
             {filterData.map((item)=>{
                 return (
-                    <Box key={item.queryName} m={3}>
-                        <Select placeholder={item.placeholder} onChange={(e)=>showValue(e,item.queryName)}>
+                    <Box  bg='red' key={item.queryName} m={2}>
+                        <Select placeholder={item.placeholder} onChange={(e)=>showValue(e, item.queryName)}>
                             {item?.items.map((label)=>
                                <option value={label.value} key={label.value}>{label.name}</option>
                             )}
