@@ -1,4 +1,4 @@
-import Link from 'next/link'
+
 import Image from 'next/image'
 import Property  from '../components/property'
 import { Flex, Box, Text, Button} from '@chakra-ui/react'
@@ -6,14 +6,13 @@ import Loader from '../components/Loader'
 
 
 import {baseUrl, fetchApi} from '../utils/fetchApi'
-import { useState } from 'react'
 
 const Banner = ({img, purpose, title, button, desc}) =>(
   
   <>
     <Flex flexWrap='wrap' justifyContent ='center'  alignItems="center" m="10">
       <Box alignItems="center">
-        <Image src={img} width={500} height={300}/>
+        <Image src={img} width={500} height={300} alt='property'/>
       </Box>
       <Box p={5}>
         <Text  fontSize='16px'>{purpose}</Text>
