@@ -47,7 +47,7 @@ function Home({propertiesForRent, propertiesForSale}) {
     <Box>
        <Flex flexWrap="wrap" justifyContent ='center'>
            {propertiesForSale.map((property)=>{
-             return <Property property={property}></Property>
+             return <Property key={property.id} property={property}></Property>
           })}
       </Flex>
     </Box>
@@ -62,7 +62,7 @@ function Home({propertiesForRent, propertiesForSale}) {
     <Box  className='box'>
        <Flex flexWrap="wrap" justifyContent ='center'>
            {propertiesForRent.map((property)=>{
-             return <Property property={property}></Property>
+             return <Property key={property.id} property={property}></Property>
           })}
       </Flex>
     </Box>
