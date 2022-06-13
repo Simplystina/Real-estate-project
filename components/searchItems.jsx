@@ -26,7 +26,7 @@ const SearchItems = ()=>{
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
 
-    },[parameters])
+    },[parameters, router])
     return (
         <>
         <Flex justifyContent='center' flexWrap='wrap' w='100%'>

@@ -14,7 +14,7 @@ const Property = ({property}) => {
         <Link href={`/property/${externalID}`} passHref> 
             <Flex className='property_container' bg='whitesmoke' flexWrap='wrap' m='8px 10px' w="320px" p={3} paddingTop='10px' justifyContent='space-between' cursor='pointer' borderRadius='10px'>
                 <Box>
-                   <Image src={coverPhoto?.url || DefaultImage} width={400} height={300} alt="image"/>
+                   <Image src={coverPhoto?.url || DefaultImage} width={400} height={300} alt="cover-photo"/>
                 </Box>
                 <Box  paddingTop={5} w='100%'>
                    <Flex paddingTop='2' alignItems='center' justifyContent='space-between' className='property_price'>

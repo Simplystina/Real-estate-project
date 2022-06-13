@@ -30,7 +30,7 @@ const Search = ({properties}) =>{
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
 
-    },[search, properties])
+    },[search, properties, router])
 
     if(loading){
       return <Loader/>
