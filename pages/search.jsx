@@ -27,6 +27,9 @@ const Search = ({properties}) =>{
       if(properties){
         setLoading(false)
       }
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+
     },[search, properties])
 
     if(loading){
@@ -54,7 +57,7 @@ const Search = ({properties}) =>{
      <Text className='heading_text' fontSize={25} fontWeight="bold" m='10px 20px'>{query.purpose? `Properties for ${query.purpose}` : 'All Properties' }</Text>
      <Flex flexWrap="wrap" justifyContent ='center'>
            {properties.map((property)=>{
-             return <Property property={property}></Property>
+             return <Property key={property.id} property={property}></Property>
           })}
       </Flex>
     </>)

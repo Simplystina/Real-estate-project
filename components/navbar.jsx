@@ -12,9 +12,9 @@ const Navbar = ()=>{
              <Menu>
                  <MenuButton marginRight={25} as={IconButton} icon={<FcMenu/>} variant='outline'></MenuButton>
                 <MenuList>
-                    <Link href='/'><MenuItem icon={<FcHome/>}> Home </MenuItem></Link>
-                    <Link href='/search'><MenuItem icon={<BsSearch/>}>Search</MenuItem></Link>
-                    <Link href='/search?purpose=for-sale' passHref><MenuItem icon={<FcAbout/>}>Buy property</MenuItem></Link>
+                    <Link href='/' passHref><MenuItem icon={<FcHome/>}> Home </MenuItem></Link>
+                    <Link href='/search' passHref><MenuItem icon={<BsSearch/>}>Search</MenuItem></Link>
+                    <Link href='/search?purpose=for-sale' passHref passHref><MenuItem icon={<FcAbout/>}>Buy property</MenuItem></Link>
                     <Link href='/search?purpose=for-rent' passHref><MenuItem icon={<FiKey/>}>Rent Property</MenuItem></Link>
                 </MenuList>
              </Menu>

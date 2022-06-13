@@ -23,6 +23,9 @@ const SearchItems = ()=>{
         queryupdate = {...queryupdate,...parameters}
         router.push({pathname:'/search', query:queryupdate})
         console.log(queryupdate)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+
     },[parameters])
     return (
         <>
