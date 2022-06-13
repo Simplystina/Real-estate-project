@@ -1,7 +1,5 @@
-
-import Image from 'next/image'
 import Property  from '../components/property'
-import { Flex, Box, Text, Button} from '@chakra-ui/react'
+import { Flex, Box, Text, Button, Image} from '@chakra-ui/react'
 import Loader from '../components/Loader'
 
 
